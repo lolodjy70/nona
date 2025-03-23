@@ -7,9 +7,9 @@ services:
     networks:
       - wings0
     ports:
-      - "8080:8080"
-      - "2022:2022"
-      - "443:443"
+  - "8080:8080"
+  - "2022:2022"
+  - "8770:443"  # Changement du port 443 à 8770
     tty: true
     environment:
       TZ: "UTC"
