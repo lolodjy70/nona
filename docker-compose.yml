@@ -9,7 +9,7 @@ services:
     ports:
   - "8080:8080"
   - "2022:2022"
-  - "8443:443"  # Changer 443 à 8443 si nécessaire
+  - "8443:443"  # Changer 443 à 8443 
     tty: true
     environment:
       TZ: "UTC"
@@ -18,15 +18,15 @@ services:
       WINGS_USERNAME: "pterodactyl"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "/var/lib/docker/containers:/var/lib/docker/containers/"
-      - "/etc/pterodactyl:/etc/pterodactyl/"
-      - "/var/lib/pterodactyl:/var/lib/pterodactyl/"
-      - "/var/log/pterodactyl:/var/log/pterodactyl/"
-      - "/tmp/pterodactyl:/tmp/pterodactyl/"
+      - "/var/lib/docker/containers/:/var/lib/docker/containers/"
+      - "/etc/pterodactyl/:/etc/pterodactyl/"
+      - "/var/lib/pterodactyl/:/var/lib/pterodactyl/"
+      - "/var/log/pterodactyl/:/var/log/pterodactyl/"
+      - "/tmp/pterodactyl/:/tmp/pterodactyl/"
       - "/etc/ssl/certs:/etc/ssl/certs.ro"
-      # Uncomment the lines below if needed
-      # - "/srv/daemon-data:/srv/daemon-data/"
-      # - "/etc/letsencrypt:/etc/letsencrypt/"
+      # Vous pouvez décommenter les lignes ci-dessous si nécessaire
+      # - "/srv/daemon-data/:/srv/daemon-data/"
+      # - "/etc/letsencrypt/:/etc/letsencrypt/"
 
 networks:
   wings0:
