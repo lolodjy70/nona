@@ -7,9 +7,9 @@ services:
     networks:
       - wings0
     ports:
-  - "8080:8080"
-  - "2022:2022"
-  - "8770:443"  # Changement du port 443 à 8770
+      - "8080:8080"
+      - "2022:2022"
+      - "8770:443" # Changement du port 443 à 8770
     tty: true
     environment:
       TZ: "UTC"
@@ -18,15 +18,15 @@ services:
       WINGS_USERNAME: "pterodactyl"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "/var/lib/docker/containers/:/var/lib/docker/containers/"
-      - "/etc/pterodactyl/:/etc/pterodactyl/"
-      - "/var/lib/pterodactyl/:/var/lib/pterodactyl/"
-      - "/var/log/pterodactyl/:/var/log/pterodactyl/"
-      - "/tmp/pterodactyl/:/tmp/pterodactyl/"
+      - "/var/lib/docker/containers:/var/lib/docker/containers/"
+      - "/etc/pterodactyl:/etc/pterodactyl/"
+      - "/var/lib/pterodactyl:/var/lib/pterodactyl/"
+      - "/var/log/pterodactyl:/var/log/pterodactyl/"
+      - "/tmp/pterodactyl:/tmp/pterodactyl/"
       - "/etc/ssl/certs:/etc/ssl/certs.ro"
-      # Vous pouvez décommenter les lignes ci-dessous si nécessaire
-      # - "/srv/daemon-data/:/srv/daemon-data/"
-      # - "/etc/letsencrypt/:/etc/letsencrypt/"
+      # Uncomment the lines below if needed
+      # - "/srv/daemon-data:/srv/daemon-data/"
+      # - "/etc/letsencrypt:/etc/letsencrypt/"
 
 networks:
   wings0:
